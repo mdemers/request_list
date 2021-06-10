@@ -5,7 +5,7 @@ cfg = AppConfig[:request_list]
 
 Plugins::extend_aspace_routes(File.join(File.dirname(__FILE__), "routes.rb"))
 
-Plugins::add_menu_item('/plugin/request_list', 'plugin.request_list.menu_label')
+Plugins::add_menu_item('/plugin/request_list/list', 'plugin.request_list.menu_label')
 
 Plugins::add_record_page_action_erb(cfg.fetch(:record_types, ['archival_object', 'accession']),
                                     'request_list/action_button',
