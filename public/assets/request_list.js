@@ -395,7 +395,7 @@
 
     RequestList.prototype.showListCount = function(flash) {
 	var items = this.getList().length;
-	var a = $("a[href='/plugin/request_list/list']").first();
+	var a = $("a[href$='/plugin/request_list/list']").first();
 	a.html(a.html().replace(/ \(\d+\)/, " (" + items + ")"));
 	if (flash) {
 	    a.parent().fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
