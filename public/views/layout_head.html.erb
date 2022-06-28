@@ -1,6 +1,7 @@
-<link href="<%= "/assets/request_list.css" %>" media="all" rel="stylesheet" type="text/css">
-<%= javascript_include_tag "jquery.cookie" %>
-<%= javascript_include_tag 'request_list' %>
+<%= stylesheet_link_tag "#{AppConfig[:public_proxy_prefix]}assets/request_list.css?_t=#{ASConstants.VERSION}" %>
+
+<%= javascript_include_tag "#{AppConfig[:public_proxy_prefix]}assets/jquery.cookie.js?_t=#{ASConstants.VERSION}" %>
+<%= javascript_include_tag "#{AppConfig[:public_proxy_prefix]}assets/request_list.js?_t=#{ASConstants.VERSION}" %>
 
 <script>
 
