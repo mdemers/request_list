@@ -13,10 +13,10 @@
 
 <table class="rl-item-table">
   <tr>
-    <td class="rl-display" rowspan="<%= is_record ? 4 : 3 %>" width="30px">
+    <td class="rl-display" rowspan="<%= is_record ? 5 : 4 %>" width="30px">
       <input type="checkbox" name="item-check-<%= @item_count %>" class="rl-item-check"/>
     </td>
-    <td class="rl-display rl-display-left" rowspan="<%= is_record ? 4 : 3 %>" width="30px">
+    <td class="rl-display rl-display-left" rowspan="<%= is_record ? 5 : 4 %>" width="30px">
       <div class="rl-item-count-label"><%= @item_count %></div>
     </td>
 
@@ -92,6 +92,12 @@
 
   </tr>
 
+  <tr>
+    <td></td>
+    <td>
+      <%= render partial: "request_list/#{handler.profile}/item_display", locals: {:form => form, :item => item, :handler => handler } %>
+    </td>
+  </tr>
 </table>
 
 <%= render(partial: 'request_list/expand_item_button', locals: {:item => item }) if handler.list_opts[:expandable_items] %>
