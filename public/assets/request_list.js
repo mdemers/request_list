@@ -423,14 +423,14 @@
 	}
     };
 
-    RequestList.prototype.removeFromList = function(uri, silent) {
+    RequestList.prototype.removeFromList = function(uri, silent, noReload) {
 	var list = this.getList();
 	if (this.isInList(uri)) {
 	    list.splice($.inArray(uri, list), 1);
 	    this.setList(list);
 	    this.showListCount(!silent);
             this.showRemoveAllButton();
-	    if (list.length == 0) {
+	    if (list.length == 0 && !noReload) {
 		location.reload(true);
 	    }
 	    return true;
