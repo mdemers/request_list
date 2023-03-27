@@ -56,7 +56,7 @@ en:
         send_button_label: Send Email
         sent_message: Your list has been sent to %{email}.
         error_message: Your list was not sent. Please provide a validate email address.
-        from: '"ArchivesSpace Request List" <do_not_reply@example.com>'
+        from: '"ArchivesSpace Request List" <system@hagley.org>'
         subject: ArchivesSpace List Items
         header: ArchivesSpace List Items
       print:

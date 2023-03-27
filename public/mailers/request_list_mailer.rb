@@ -1,5 +1,5 @@
 class RequestListMailer < ApplicationMailer
-  def email(user_email, mapper)
+  def email(mapper)
     # the plugin dir is not in the view path in this context, so render the template manually
     view_path = File.join(File.dirname(__FILE__), '..', 'views')
     email_body = render(file: File.join(view_path, 'request_list_mailer', 'email'),
@@ -12,7 +12,7 @@ class RequestListMailer < ApplicationMailer
 
     mail(
          from: I18n.t('plugin.request_list.email.from'),
-         to: user_email,
+         to: 'mdemers@hagley.org',
          subject: I18n.t('plugin.request_list.email.subject'),
          content_type: 'text/html',
          body: email_body,

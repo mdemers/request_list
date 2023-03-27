@@ -50,18 +50,7 @@
 
 <div class="row">
 
-  <div class="col-sm-3">
-    <div class="form-group rl-ha-type-select">
-      <label class="control-label"><%= t('plugin.request_list.options.request_type') %></label>
-      <div class="">
-        <select name="request_type" id="request_type_select" class="form-control">
-          <% handler.list_opts[:request_types].each do |type, values| %>
-            <option value="<%= ASUtils.to_json(values) %>"><%= type %></option>
-          <% end %>         
-        </select>
-      </div>
-    </div>
-  </div>
+
 
 
   <div class="rl-ha-additional-fields">
@@ -91,68 +80,13 @@
     </div>
 
 
-    <div class="rl-ha-options-form" id="rl-photoduplication-options-form" data-request-type="photoduplication">
-      <div class="form-group col-sm-3">
-        <label class="control-label" title="Required"><%= t('plugin.request_list.options.format') %> *</label>
-        <select name="Format" class="form-control rl-ha-list-input required">
-          <option value="">...</option>
-          <% handler.list_opts[:format_options].each do |option| %>
-            <option value="<%= option %>"><%= option %></option>
-          <% end %>
-        </select>
-      </div>
 
-      <div class="form-group col-sm-3">
-        <label class="control-label" title="Required"><%= t('plugin.request_list.options.delivery') %> *</label>
-        <select name="ShippingOption" class="form-control rl-ha-list-input required">
-          <option value="">...</option>
-          <% handler.list_opts[:delivery_options].each do |option| %>
-            <option value="<%= option %>"><%= option %></option>
-          <% end %>
-        </select>
-      </div>
-
-      <div class="form-group col-sm-2" style="padding-top: 20px">
-        <label class="control-label" style="display:inline"><%= t('plugin.request_list.options.for_publication') %></label>
-        &nbsp;
-        <input type="checkbox" name="ForPublication" class="rl-ha-list-input" style="display:inline" value="Yes"/>
-      </div>
-    </div>
   </div>
 </div>
 
 
 
-<div class="row">
 
-  <div class="form-group rl-ha-notes-and-questions col-sm-5">
-    <div class="form-group">
-      <label class="control-label"><%= t('plugin.request_list.options.notes') %></label>
-      <textarea name="Notes"
-                rows="3"
-                class="form-control rl-ha-list-input"
-                title="<%= t('plugin.request_list.options.notes_help') %>"
-                maxlength="65536"></textarea>
-    </div>
-  </div>
-
-  <div class="form-group rl-ha-notes-and-questions col-sm-5">
-    <div class="form-group">
-      <label class="control-label rl-ha-questions-label"
-             data-photoduplication-label="<%= t('plugin.request_list.options.photoduplication_instructions') %>"
-             data-other-label="<%= t('plugin.request_list.options.questions') %>">
-        <%= t('plugin.request_list.options.questions') %>
-      </label>
-      <textarea name="SpecialRequest"
-                rows="3"
-                class="form-control rl-ha-list-input rl-ha-questions-input"
-                title="<%= t('plugin.request_list.options.questions_help') %>"
-                data-photoduplication-help="<%= t('plugin.request_list.options.photoduplication_instructions_help') %>"
-                data-other-help="<%= t('plugin.request_list.options.questions_help') %>"
-                maxlength="255"></textarea>
-    </div>
-  </div>
-</div>
 
 <div class="row">
   <div class="col-sm-8"></div>

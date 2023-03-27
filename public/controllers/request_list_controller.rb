@@ -33,16 +33,12 @@ class RequestListController <  ApplicationController
 
 
   def email
-    if !params[:user_email].blank? && params[:user_email].match(/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i)
-      flash[:notice] = I18n.t('plugin.request_list.email.sent_message', {:email => params[:user_email]})
 
-      RequestListMailer.email(params[:user_email], mapper).deliver
+
+      RequestListMailer.email(mapper).deliver
 
       redirect_back(fallback_location: request[:request_uri]) and return
-    else
-      flash[:error] = I18n.t('plugin.request_list.email.error_message', {:email => params[:user_email]})
-      redirect_back(fallback_location: request[:request_uri]) and return
-    end
+
   end
 
 
